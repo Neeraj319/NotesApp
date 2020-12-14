@@ -1,1 +1,1 @@
-worker: manage.py
+web: gunicorn NotesApp.wsgi
