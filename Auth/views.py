@@ -34,13 +34,13 @@ def sigin_user(request):
             print(first_name, last_name, username, email, password, password2)
 
             if (first_name and last_name and username and email and password2 and password2) == '':
-                return render(request, 'registration/register.html', {'fail': 'fields cannot be empty'})
+                return render(request, 'register/sign_up.html', {'fail': 'fields cannot be empty'})
             else:
                 if password == password2:
                     if User.objects.filter(username=username).exists():
-                        return render(request, 'registration/register.html', {'fail': 'username taken'})
+                        return render(request, 'register/sign_up.html', {'fail': 'username taken'})
                     elif User.objects.filter(email=email).exists():
-                        return render(request, 'registration/register.html', {'fail': 'eamil taken'})
+                        return render(request, 'register/sign_up.html', {'fail': 'eamil taken'})
                     First_name = first_name.capitalize()
                     Last_name = last_name.capitalize()
                     user = User.objects.create_user(
@@ -49,7 +49,7 @@ def sigin_user(request):
                     print('user created')
                     return redirect('home')
                 else:
-                    return render(request, 'registration/register.html', {'fail': 'password miss match'})
+                    return render(request, 'register/sign_up.html', {'fail': 'password miss match'})
     else:
         return redirect('home')
 
