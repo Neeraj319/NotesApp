@@ -8,6 +8,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import NotesForm
 
+# def home_page(request):
+#     if request.user.is_authenticated:
+#         return redirect('home')
+#     return render(request, 'home.html')
+
 
 @login_required
 def index(request):

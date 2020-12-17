@@ -3,6 +3,7 @@ from django.urls import path
 from .views import index, View_Notes, edit, Delete_note
 
 urlpatterns = [
+    # path('', home_page),
     path('', index, name='home'),
     path('notes/', View_Notes.as_view(), name='show_notes'),
     path('edit/<str:slug>', edit, name='edit'),
