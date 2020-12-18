@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import pre_save
 from django.template.defaultfilters import slugify
+import random
 # Create your models here.
 
 
@@ -13,9 +14,6 @@ class Notes(models.Model):
     content = models.TextField()
     slug = models.SlugField(blank=True, unique=True)
     date_created = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.title
 
     def save(self, *args, **kwargs):
         self.slug = slugify(f'{self.title}-{self.id}')
