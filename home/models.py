@@ -15,9 +15,9 @@ class Notes(models.Model):
     slug = models.SlugField(blank=True, unique=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'note of {self.user}'
+
     def save(self, *args, **kwargs):
         self.slug = slugify(f'{self.title}-{self.id}')
         super(Notes, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return f'note of {self.user}'
