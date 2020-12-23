@@ -154,6 +154,3 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 SUMMERNOTE_THEME = 'bs4'
 
 django_heroku.settings(locals())
-admin.site.site_header = "Notes11 Admin"
-admin.site.site_title = "Notes11 Admin Portal"
-admin.site.index_title = "Welcome to Notes11 Researcher Portal"
