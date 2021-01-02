@@ -10,28 +10,27 @@
 </head>
 
 <body>
-    <div class = 'container'>
-    <a href="{% url 'home' %}">Home</a>
-    {%if Notes%}
-    {% for note in Notes %}
-    
-     <h1 class="display-4">{{note.title}}</h1>
-    <p>
-    {{note.content | safe}}
-    </p>
-    
-    on {{note.date_created}}
-    <a href="{% url 'edit' note.slug %}" class = 'btn btn-success'>edit</a>
-    <a href="{% url 'delete' note.slug %}" class = 'btn btn-dark'>delete</a>
-     
-    <hr>
-    {% endfor %}
-    {% else %}
-    <h1>
-    no notes
-    </h1>
-    {% endif %}
-    
+    <div class='container'>
+        <a href="{% url 'home' %}">Home</a>
+        {%if Notes%}
+        {% for note in Notes %}
+
+        <a href="{% url 'note' note.slug %}">
+            <h1 class="display-4">{{note.title}}</h1>
+        </a>
+
+        on {{note.date_created}}
+        <a href="{% url 'edit' note.slug %}" class='btn btn-success'>edit</a>
+        <a href="{% url 'delete' note.slug %}" class='btn btn-dark'>delete</a>
+
+        <hr>
+        {% endfor %}
+        {% else %}
+        <h1>
+            no notes
+        </h1>
+        {% endif %}
+
     </div>
 </body>
 

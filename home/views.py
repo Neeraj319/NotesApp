@@ -3,6 +3,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from .models import Notes
 from django.views.generic import ListView, DeleteView, View
 from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
 # Create your views here.
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -85,3 +86,11 @@ class Delete_note(LoginRequiredMixin, View):
             return render(request, 'delete_notes.html', context={'notes': note})
         else:
             return redirect('show_notes')
+
+
+def note_detail(request, slug):
+    note = get_object_or_404(Notes, slug=slug)
+    context = {
+        'note': note
+    }
+    return render(request, 'note_detail.html', context)

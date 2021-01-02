@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import pre_save
 from django.template.defaultfilters import slugify
-import random
 # Create your models here.
 
 
@@ -19,5 +18,6 @@ class Notes(models.Model):
         return f'note of {self.user}'
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(f'{self.title}-{self.id}')
+        if not self.pk:
+            self.slug = slugify(f'{self.title}{self.content[:10]}')
         super(Notes, self).save(*args, **kwargs)
