@@ -157,7 +157,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
-CKEDITOR_UPLOAD_PATH = BASE_DIR 'media/uploads/'
+CKEDITOR_UPLOAD_PATH = BASE_DIR / 'media/uploads/'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SUMMERNOTE_THEME = 'bs4'
 
