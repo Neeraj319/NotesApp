@@ -28,7 +28,7 @@ SECRET_KEY = 'b=cl9!r=h1*lkph#ny68%zf+^$=77s*tj&9e^qm1@oib&-t%ul'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['notes-11.herokuapp.com ', ]
 
 
 # Application definition
