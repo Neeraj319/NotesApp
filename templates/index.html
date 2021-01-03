@@ -24,7 +24,8 @@
         
         <form method="POST">
             {% csrf_token %}
-                {{context | crispy}}
+                {{form | crispy }}
+                {{form.media}}
                 <br>
                 <input type="submit" class="btn btn-dark btn-lg btn-block">
 

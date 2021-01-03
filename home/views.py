@@ -27,7 +27,7 @@ def index(request):
             note.save()
             print('created')
         return redirect('show_notes')
-    return render(request, 'index.html', {'context': form})
+    return render(request, 'index.html', {'form': form})
 
 
 class View_Notes(LoginRequiredMixin, ListView):
@@ -58,7 +58,7 @@ def edit(request, slug):
                 return redirect('show_notes')
         context = {
             "notes": note,
-            'context': form
+            'form': form
         }
     else:
         return redirect('show_notes')

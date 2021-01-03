@@ -25,5 +25,6 @@ urlpatterns = [
     path('', include('home.urls')),
     path('auth/', include('Auth.urls')),
     path('api/', include('Notes_Api.urls')),
-    path('summernote/', include('django_summernote.urls')),
+    # path('summernote/', include('django_summernote.urls')),
+    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

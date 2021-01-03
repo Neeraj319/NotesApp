@@ -15,7 +15,8 @@
             <h1 class="display-4">Edit : {{notes.title}} </h1>
     <form method="POST">
             {% csrf_token %}
-            {{context | crispy}}
+                {{form | crispy }}
+                {{form.media}}
             {% comment %} <div class="form-group">
                 <label for="exampleFormControlInput1">Title</label>
                 <input type="text" class="form-control" name='title' id="exampleFormControlInput1"
