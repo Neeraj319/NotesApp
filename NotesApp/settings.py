@@ -121,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'Basic',  # You can change this based on your requirements.
+        'toolbar': 'Custom',  # You can change this based on your requirements.
         'width': 'auto',
 
     },
