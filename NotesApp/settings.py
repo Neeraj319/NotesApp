@@ -123,6 +123,13 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',  # You can change this based on your requirements.
         'width': 'auto',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
 
     },
 }
