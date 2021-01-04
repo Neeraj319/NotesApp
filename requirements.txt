@@ -14,4 +14,4 @@ whitenoise==5.2.0
 django-heroku==0.3.1
 gunicorn==20.0.4
 django-crispy-forms==1.9.2
-django-ckeditor==3.6.2.1
+django-ckeditor==6.0.0
